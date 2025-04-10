@@ -1,29 +1,56 @@
-import { useNavigate } from 'react-router-dom'
+// src/pages/Login.jsx
 
-export default function Login() {
-  const navigate = useNavigate()
+import React, { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom'; // For navigation after successful login
+import '../styles/Login.css'; // Add your custom styles
 
-  function handleLogin(e) {
-    e.preventDefault()
-    // Mock login
-    navigate('/games')
-  }
+function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate(); // For navigating after login
+
+  // Handle user login
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    try {
+      // Log in the user with Firebase Authentication
+      await signInWithEmailAndPassword(auth, email, password);
+
+      // Redirect user to a different page (e.g., home or store)
+      navigate('/'); // Adjust according to your routing setup
+    } catch (err) {
+      setError(err.message); // Display any errors that occur
+    }
+  };
 
   return (
-    <form onSubmit={handleLogin} className="max-w-sm mx-auto mt-10 space-y-4">
-      <h1 className="text-2xl font-bold text-center">Login</h1>
-      <div className="bg-blue-500 text-white p-4 rounded-xl">
-  Tailwind is working 🎉
-</div>
-
-      <input type="text" placeholder="Username" className="w-full p-2 border rounded" />
-      <input type="password" placeholder="Password" className="w-full p-2 border rounded" />
-      <button className="w-full bg-blue-500 text-white p-2 rounded">Login</button>
-      <p className="text-center">
-        Don't have an account? <a className="text-blue-500" href="/signup">Sign Up</a>
-      </p>
-      
-
-    </form>
-  )
+    <div className="login-container">
+      <h2>Login</h2>
+      {error && <p className="error-message">{error}</p>}
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
 }
+
+export default Login;

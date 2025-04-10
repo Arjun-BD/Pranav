@@ -1,0 +1,35 @@
+/* src/styles/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .navbar-links a,
+  .navbar-links button {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .navbar-links button.logout-btn {
+    background-color: #f44336; /* Red for logout */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .navbar-links a:hover,
+  .navbar-links button:hover {
+    color: #f44336; /* Hover effect */
+  }
+  
+  .navbar-links button.logout-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+  

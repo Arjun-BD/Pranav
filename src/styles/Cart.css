@@ -1,0 +1,139 @@
+/* Container for the entire cart */
+.cart-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header for the cart */
+  .cart-container h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Message when cart is empty */
+  .cart-container p {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Each cart item row */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Game name styling */
+  .game-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    flex: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Price styling */
+  .game-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+    text-align: right;
+  }
+  
+  /* Remove button styling */
+  .remove-btn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+  }
+  
+  .remove-btn:hover {
+    background-color: #e04d4d;
+  }
+  
+  /* Total section */
+  .cart-total {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Checkout button styling */
+  .cart-checkout-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cart-checkout-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Notification Styling */
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+  }
+  
+  .notification-close-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .notification-close-btn:hover {
+    color: #d1d1d1;
+  }
+  
